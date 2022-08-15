@@ -2098,10 +2098,10 @@ Get started with Docker for Windows
  
 
 ### 流程
-1.建立自己的 code
-2.寫入Dockerfile
-3.建立images
-4.定義services
-5.run containers
-6.test My code
-7.git push
+    1.建立自己的 code
+    2.寫入Dockerfile
+    3.建立images
+    4.定義services
+    5.run containers
+    6.test My code
+    7.git push
