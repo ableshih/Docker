@@ -1982,119 +1982,128 @@ https://stackoverflow.com/questions/40459280/docker-cannot-start-on-windows
 
 ## 123
 
-Docker
-Windows 
-Windows Hyper-V
-Linux
-Linux
-iOS
-VB
-Topic branch
-Linux
-建立與使用image
+    Docker
+    Windows 
+    Windows Hyper-V
+    Linux
+    Linux
+    iOS
+    VB
+    Topic branch
+    Linux
+    建立與使用image
+    
 ### 指令
-pull
-images
-run
-ps
-stop
-start
-exec
-commit
-tag
-rmi
-rm
-push
-指令2
-映像檔 Image
-容器 Container
-run、start、stop、rm
-### 倉庫 Registry
-docker search nginx
-docker version
-docker info
-docker pull ubuntu
-Docker 列出 Local Images
-docker images
-Docker 啟動 Image 產生 Container
-docker start hash-id
-Docker 暫停 Image
-docker stop hash-id
-Docker 執行 Image
-docker run -d debian:jessie
-Docker 執行 Container
-docker exec hash-id /sbin/ifconfig
-Docker 掛載目錄進入 Container
-docker -v 掛載點
-docker run -d --name xxx -p 80:80 -p 3306:3306 -v /mnt/xxx:/mnt debian:jessie
-Docker 產生、操作 Volumes
-docker volume create --name myvol # 建立 local volume
-docker run -v myvol:/data # Container start 就 Mount 此 volume
-Docker 列出 Container
-docker ps # 還在執行中的 Container，可以看到詳細 hash id
-docker ps -a # 執行、停止的 Container 都列出來
-Docker 進入(Attach) Container
-docker attach hash-id
-Docker 列出 Logs
-docker logs hash-id
-Docker 刪除 Container
-docker rm -f hash-id # 強置刪除
-Docker 刪除 Images
-docker rmi image-id
-docker rmi -f image-id # 強置刪除
-https://docs.docker.com/engine/reference/commandline/docker/
+    pull
+    images
+    run
+    ps
+    stop
+    start
+    exec
+    commit
+    tag
+    rmi
+    rm
+    push
+
+## 指令2
+    映像檔 Image
+    容器 Container
+    run、start、stop、rm
+    ### 倉庫 Registry
+    docker search nginx
+    docker version
+    docker info
+    docker pull ubuntu
+    Docker 列出 Local Images
+    docker images
+    Docker 啟動 Image 產生 Container
+    docker start hash-id
+    Docker 暫停 Image
+    docker stop hash-id
+    Docker 執行 Image
+    docker run -d debian:jessie
+    Docker 執行 Container
+    docker exec hash-id /sbin/ifconfig
+    Docker 掛載目錄進入 Container
+    docker -v 掛載點
+    docker run -d --name xxx -p 80:80 -p 3306:3306 -v /mnt/xxx:/mnt debian:jessie
+    Docker 產生、操作 Volumes
+    docker volume create --name myvol # 建立 local volume
+    docker run -v myvol:/data # Container start 就 Mount 此 volume
+    Docker 列出 Container
+    docker ps # 還在執行中的 Container，可以看到詳細 hash id
+    docker ps -a # 執行、停止的 Container 都列出來
+    Docker 進入(Attach) Container
+    docker attach hash-id
+    Docker 列出 Logs
+    docker logs hash-id
+    Docker 刪除 Container
+    docker rm -f hash-id # 強置刪除
+    Docker 刪除 Images
+    docker rmi image-id
+    docker rmi -f image-id # 強置刪除
+
+    https://docs.docker.com/engine/reference/commandline/docker/
+
 ### 安装 
-https://www.runoob.com/docker/docker-build-command.html
-Ubuntu
-Debian 
-CentOS 
-Windows 
-MacOS
+    https://www.runoob.com/docker/docker-build-command.html
+    Ubuntu
+    Debian 
+    CentOS 
+    Windows 
+    MacOS
+    
 ### 使用
-docker run ubuntu:15.10 /bin/echo "Hello world"
-docker stats --help
-docker pull ubuntu
-docker run -it ubuntu /bin/bash
-docker ps -a
-docker start b750bbbcfd88
-docker run -itd --name ubuntu-test ubuntu /bin/bash
-docker stop <容器 ID>
-docker restart <容器 ID>
-docker attach 1e560fca3906 
-docker exec -it 243c32535da7 /bin/bash
-docker export 1e560fca3906 > ubuntu.tar
-docker import http://example.com/exampleimage.tgz example/imagerepo
-docker rm -f 1e560fca3906
-docker pull training/webapp  # 载入镜像
-docker run -d -P training/webapp python app.py
-docker ps
-docker port bf08b7f2cd89
-docker logs -f bf08b7f2cd89
-docker rm wizardly_chandrasekhar  
+    docker run ubuntu:15.10 /bin/echo "Hello world"
+    docker stats --help
+    docker pull ubuntu
+    docker run -it ubuntu /bin/bash
+    docker ps -a
+    docker start b750bbbcfd88
+    docker run -itd --name ubuntu-test ubuntu /bin/bash
+    docker stop <容器 ID>
+    docker restart <容器 ID>
+    docker attach 1e560fca3906 
+    docker exec -it 243c32535da7 /bin/bash
+    docker export 1e560fca3906 > ubuntu.tar
+    docker import http://example.com/exampleimage.tgz example/imagerepo
+    docker rm -f 1e560fca3906
+    docker pull training/webapp  # 载入镜像
+    docker run -d -P training/webapp python app.py
+    docker ps
+    docker port bf08b7f2cd89
+    docker logs -f bf08b7f2cd89
+    docker rm wizardly_chandrasekhar  
+
 ### 镜像使用
-docker images
-docker run -t -i ubuntu:15.10 /bin/bash
-docker pull ubuntu:13.10
-docker search httpd
-docker pull httpd
-docker run httpd
-docker rmi hello-world
+    docker images
+    docker run -t -i ubuntu:15.10 /bin/bash
+    docker pull ubuntu:13.10
+    docker search httpd
+    docker pull httpd
+    docker run httpd
+    docker rmi hello-world
+
 ### 容器连接
-### 创建了一个 python 应用的容器
-docker run -d -P training/webapp python app.py
-docker ps
-docker run -d -p 127.0.0.1:5001:5000 training/webapp python app.py
+    创建了一个 python 应用的容器
+        docker run -d -P training/webapp python app.py
+        docker ps
+        docker run -d -p 127.0.0.1:5001:5000 training/webapp python app.py
+    
 ### 仓库管理
-docker login
-docker logout
-docker search ubuntu
+    docker login
+    docker logout
+    docker search ubuntu
+    
 ### 網站資源
-Docker 教程
-Docker 初學筆記 - 基本指令操作教學
-Docker CLI
-用30天來介紹和使用 Docker
-Docker學習筆記
-Get started with Docker for Windows
+    Docker 教程 https://www.runoob.com/docker/docker-tutorial.html
+    Docker 初學筆記 - 基本指令操作教學 https://blog.longwin.com.tw/2017/01/docker-learn-initial-command-cheat-sheet-2017/
+    Docker CLI https://docs.docker.com/engine/reference/commandline/docker/
+    用30天來介紹和使用 Docker https://ithelp.ithome.com.tw/users/20103456/ironman/1320
+    Docker學習筆記 
+    Get started with Docker for Windows https://docs.docker.com/docker-for-windows/
  
 
 ### 流程
